@@ -1,0 +1,10 @@
+:- use_module(view).
+
+% main_loop/0
+main_loop :-
+    repeat,
+    show_menu,
+    read_line_to_string(user_input, Choice),
+    handle_input(Choice),
+    Choice = "11",  % Termina o loop se a escolha for "11".
+    !.  % Remove a escolha anterior da pilha de backtracking.
